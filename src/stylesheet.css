@@ -1,0 +1,41 @@
+#search-area {
+  /* border: 1px red solid; */
+}
+
+#team-area {
+  border: 1px red solid;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#team-title {
+  text-align: center;
+}
+
+#title {
+  text-align: center;
+}
+
+#search-area {
+  text-align: center;
+}
+
+.pokemon-card {
+  display: flex;
+  flex-direction: column;
+  border: green 1px solid;
+  margin: 1em 0;
+}
+
+.pokemon-name {
+  text-align: center;
+}
+
+#pokemon-preview-display {
+  display: flex;
+  justify-content: center;
+}
+
+.preview-gap {
+  margin: 1em 2em;
+}
