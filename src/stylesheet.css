@@ -1,7 +1,3 @@
-#search-area {
-  /* border: 1px red solid; */
-}
-
 body {
   background: linear-gradient(-45deg, #1b21e9, #3a61eb, #f0c74a, #f6ee98);
   background-size: 400% 400%;
@@ -22,7 +18,6 @@ body {
 }
 
 #team-area {
-  /* border: 1px red solid; */
   display: flex;
   justify-content: space-evenly;
 }
@@ -113,13 +108,15 @@ body {
 .pokemon-card {
   display: flex;
   flex-direction: column;
-  border: green 1px solid;
   margin: 1em 0;
   border-radius: 30%;
+  align-items: center;
 }
 
 .pokemon-name {
   text-align: center;
+  color: white;
+  height: 22.5px;
 }
 
 #pokemon-preview-display {
@@ -134,4 +131,40 @@ body {
 .pkm-img {
   height: 100px;
   width: 100px;
+}
+
+.pkm-img:hover {
+  transform: scale(1.1);
+}
+
+#pokemon-preview-img {
+  height: 300px;
+  width: 300px;
+}
+
+#pokemon-preview-img-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#pkm-stats {
+  color: rgb(255, 255, 255);
+  font-size: 20px;
+}
+
+.dragging {
+  opacity: 0.1;
+}
+
+.remove-pokemon-button {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 1em 1em;
+  font-size: 1em;
+  border-radius: 20px;
+}
+.remove-pokemon-button:hover {
+  background-color: #111bce;
 }

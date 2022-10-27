@@ -1,9 +1,9 @@
-const fetch = require("cross-fetch");
+// import fetch from "cross-fetch";
 
 async function fetchPokemon(pokemonName) {
   try {
     const response = await fetch(
-      `https://pokeapi.co/api/v2/pokemon/${pokemonName}`
+      `https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`
     );
     const data = await response.json();
 
@@ -69,4 +69,4 @@ class Team {
   }
 }
 
-module.exports = Team;
+// export { Team, fetchPokemon };
