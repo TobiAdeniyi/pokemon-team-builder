@@ -93,6 +93,10 @@ body {
   border: 50%;
 }
 
+#search-button:hover {
+  transform: scale(1.1);
+}
+
 #search-input:focus {
   width: 300px;
   border-radius: 10px;
