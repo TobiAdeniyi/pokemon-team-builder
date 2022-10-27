@@ -25,12 +25,12 @@ class Team {
 
   // Fetch and add a pokemon to our party members
   async addMember(pokemon) {
-    if (this.members.length == 6) { throw new Error("Party is full!")
-    if ((pokemon == undefined) || (pokemon == "")) { throw new Error("Pokemon Name Missing!"); }
+    if (this.members.length === 6) { throw new Error("Party is full!") }
+    if ((pokemon === undefined) || (pokemon === "")) { throw new Error("Pokemon Name Missing!"); }
     try {
       const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
       const data = await response.json();
-      if (data == undefined) { throw new Error("Pokemon does not exist!"); }
+      if (data === undefined) { throw new Error("Pokemon does not exist!"); }
 
       // console.log(data.name);
       this.members.push(data);
