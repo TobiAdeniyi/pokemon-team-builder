@@ -1,17 +1,19 @@
 const fetch = require("cross-fetch");
 
-// TODO
-// async function fetchPokemon(pokemonName) {
-//   try {
-//     const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
-//     const data = await response.json();
-//     console.log(data);
-//     return data;
-//   } catch (error) {
-//     throw new Error("Invalid pokemon");
-//   }
 
-// }
+async function fetchPokemon(pokemonName) {
+  try {
+    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+    const data = await response.json();
+
+    if (data === undefined) {
+      throw new Error("Pokemon does not exist!");
+    }
+    return data;
+  } catch (error) {
+    throw new Error("Invalid pokemon");
+  }
+}
 
 
 class Team {
@@ -24,25 +26,21 @@ class Team {
   }
 
   // Fetch and add a pokemon to our party members
-  async addMember(pokemon) {
-    if (this.members.length === 6) { throw new Error("Party is full!") }
-    if ((pokemon === undefined) || (pokemon === "")) { throw new Error("Pokemon Name Missing!"); }
+  async addMember(pokemonName) {
+    // Check if team is full
+    // or if input (pokemonName) is empty or undifined
+    if (this.members.length === 6) {
+      throw new Error("Party is full!");
+    } else if ((pokemonName === undefined) || (pokemonName === "")) {
+      throw new Error("Pokemon Name Missing!");
+    }
+
     try {
-      const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
-      const data = await response.json();
-      if (data === undefined) { throw new Error("Pokemon does not exist!"); }
-
-      // console.log(data.name);
-      this.members.push(data);
-
+      // add pokemon to members
+      this.members.push(await fetchPokemon(pokemonName));
     } catch (error) {
       throw new Error("Invalid pokemon");
     }
-
-
-    // TODO
-    // const member = fetchPokemon(pokemon);
-    // this.members.push(member);
   }
 
   // Searches party for pokemonName, returns true if found, or false if not
@@ -60,8 +58,9 @@ class Team {
 
   removeMember(pokemonName) {
     for (let i = 0; i < this.members.length; i++) {
-      if (this.members[i].name.toLowerCase() === pokemon.toLowerCase()) {
+      if (this.members[i].name.toLowerCase() === pokemonName.toLowerCase()) {
         this.members.splice(i, 1);
+        return true;
       }
     }
 
