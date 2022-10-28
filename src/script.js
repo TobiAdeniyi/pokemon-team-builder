@@ -71,6 +71,9 @@ for (let target of targetAll) {
       let nameLabel = document.getElementById(target.id + "-label");
       nameLabel.innerText = source.value;
       myTeam.addMember(nameLabel.innerText);
+      let num = target.id.slice(8, 9);
+      let rmButton = document.getElementById("remove-pokemon-" + num);
+      rmButton.style.display = "block";
     } catch (error) {
       console.log(error);
     }
@@ -97,4 +100,6 @@ function clearPokemonPosition(num) {
     "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/items/dream-world/poke-ball.png";
   img.value = "";
   name.innerText = "";
+  let rmButton = document.getElementById("remove-pokemon-" + num);
+  rmButton.style.display = "none";
 }
