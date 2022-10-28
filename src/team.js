@@ -21,7 +21,7 @@ class Team {
     this.name = name;
     this.id = Math.floor(Math.random() * 1001);
     this.members =
-      [null, null, null, null, null, null]; /* An array of pokemon objects. Should we make this a map instead, so we can swap pokemon more efficiently? Something like
+      []; /* An array of pokemon objects. Should we make this a map instead, so we can swap pokemon more efficiently? Something like
       {pokemonName : positionInParty}. Would also give us constant time lookup to check if a pokemon is in our party (search) */
   }
 
