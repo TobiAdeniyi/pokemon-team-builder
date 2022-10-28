@@ -1,9 +1,10 @@
-const fetch = require("cross-fetch");
-
+// import fetch from "cross-fetch";
 
 async function fetchPokemon(pokemonName) {
   try {
-    const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${pokemonName}`);
+    const response = await fetch(
+      `https://pokeapi.co/api/v2/pokemon/${pokemonName.toLowerCase()}`
+    );
     const data = await response.json();
 
     if (data === undefined) {
@@ -15,13 +16,12 @@ async function fetchPokemon(pokemonName) {
   }
 }
 
-
 class Team {
-
   constructor(name) {
     this.name = name;
     this.id = Math.floor(Math.random() * 1001);
-    this.members = []; /* An array of pokemon objects. Should we make this a map instead, so we can swap pokemon more efficiently? Something like
+    this.members =
+      []; /* An array of pokemon objects. Should we make this a map instead, so we can swap pokemon more efficiently? Something like
       {pokemonName : positionInParty}. Would also give us constant time lookup to check if a pokemon is in our party (search) */
   }
 
@@ -31,7 +31,7 @@ class Team {
     // or if input (pokemonName) is empty or undifined
     if (this.members.length === 6) {
       throw new Error("Party is full!");
-    } else if ((pokemonName === undefined) || (pokemonName === "")) {
+    } else if (pokemonName === undefined || pokemonName === "") {
       throw new Error("Pokemon Name Missing!");
     }
 
@@ -69,4 +69,4 @@ class Team {
   }
 }
 
-module.exports = Team
+// export { Team, fetchPokemon };
