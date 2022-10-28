@@ -198,7 +198,7 @@
     "yocto-queue": "^0.1.0"
   },
   "scripts": {
-    "test": "jest --watch-all --verbose --coverage",
+    "test": "jest --coverage --watchAll --verbose",
     "test:coverage": "jest --verbose --collect-coverage"
   },
   "repository": {

@@ -55,7 +55,7 @@ describe("Add Pokemon", () => {
     extraMember = "lucario";
   })
 
-  // No pokemon name specified
+  // // No pokemon name specified
   // test("no name specified", () => {
   //   const pokemonName = "";
   //   expect(async () => await team.addMember(pokemonName)).toThrow("Pokemon Name Missing!")
