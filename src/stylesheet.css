@@ -142,6 +142,10 @@ body {
   width: 300px;
 }
 
+#pokemon-preview-img:hover {
+  transform: scale(1.1);
+}
+
 #pokemon-preview-img-section {
   display: flex;
   justify-content: center;
@@ -158,12 +162,15 @@ body {
 }
 
 .remove-pokemon-button {
-  background-color: #4caf50; /* Green */
+  background-color: transparent;
   border: none;
   color: white;
   padding: 1em 1em;
-  font-size: 1em;
+  font-size: em;
   border-radius: 20px;
+  height: 50px;
+  width: 50px;
+  display: none;
 }
 .remove-pokemon-button:hover {
   background-color: #111bce;
